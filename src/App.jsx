@@ -17,14 +17,14 @@ function App() {
 
 
   const Images = {
-    Perfume1:"/src/assets/Images/Perfume1.svg",
-    Perfume2:"/src/assets/Images/Perfume2.svg",
-    Perfume3:"/src/assets/Images/Perfume3.svg",
-    Perfume4:"/src/assets/Images/Perfume4.svg",
-    Perfume5:"/src/assets/Images/Perfume5.svg",
-    Perfume6:"/src/assets/Images/Perfume6.svg",
-    Perfume7:"/src/assets/Images/Perfume7.svg",
-    Perfume8:"/src/assets/Images/Perfume8.svg"
+    Perfume1:"/Images/Perfume1.svg",
+    Perfume2:"/Images/Perfume2.svg",
+    Perfume3:"/Images/Perfume3.svg",
+    Perfume4:"/Images/Perfume4.svg",
+    Perfume5:"/Images/Perfume5.svg",
+    Perfume6:"/Images/Perfume6.svg",
+    Perfume7:"/Images/Perfume7.svg",
+    Perfume8:"/Images/Perfume8.svg"
   }
   return (
     <>
