@@ -1,3 +1,14 @@
-.flickity-button, .flickity-page-dots{
+
+.hide-buttons .flickity-prev-next-button {
     display: none;
-}
+  }
+  
+  /* Show the navigation buttons for all other sliders */
+  .slider-container:not(.hide-buttons)  {
+    display: block;
+  }
+  @media all and (width<768px) {
+    .flickity-button, .flickity-page-dots{
+        display: none;
+    } 
+  }

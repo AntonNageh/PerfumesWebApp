@@ -1,6 +1,6 @@
 import Flickity from "react-flickity-component";
 import Products from '../../MainComponents/Products/Products'
-import search from '../../assets/Images/Search.svg'
+import search from '/Images/Search.svg'
 
 import './HomePage.css'
 import TrendyProducts from "../../MainComponents/Trendy/TrendyProducts";
@@ -25,6 +25,7 @@ const HomePage = ({ Images, searchValue, setSearchValue }) => {
 
       if (key === 'Enter') {
         setSearchValue(node.value);
+        navigate("/search");
       }
     };
     if (node) {
@@ -45,7 +46,7 @@ const HomePage = ({ Images, searchValue, setSearchValue }) => {
   const flickityOptions = {
     initialIndex: 1,
     contain: true,
-    wrapAround: true
+   
   };
 
   
@@ -57,35 +58,39 @@ const HomePage = ({ Images, searchValue, setSearchValue }) => {
               <img src={search} alt="SearchIcon" className='ml-5' width="25px" height="25px"></img>
               <input ref={inputRef} value={searchValue} onChange={handleChange} className='bg-transparent ml-5 outline-none w-10/12 Search' placeholder="Search perfumes"></input>
             </div>
-            <div className='mt-5 w-full font-light md:inline-block md:-ml-[20%] md:w-screen  lg:text-2xl lg:pb-10 lg:inline-block lg:-ml-[30%] lg:w-screen'>
-            <Flickity
-            className={"carousel"}
-            elementType={"div"}
-            options={flickityOptions} // takes flickity options {}
-            disableImagesLoaded={false}
-          >
-            <div>
-            <button
-              onClick={(e)=>handleClick(e)}  
-              className="bg-[#252525] opacity-75 rounded-[1rem] py-2 px-4"
-            >
-              Thematic
-            </button>
-            </div>
-            <div>
-              <button onClick={(e)=>handleClick(e)} className='bg-[#252525] opacity-75 rounded-[1rem] py-2 px-4 mx-2 md:mx-2 lg:mx-5'>Exclusive</button>
-            </div>
-            <div>
-              <button onClick={(e)=>handleClick(e)} className='bg-[#252525] opacity-75 rounded-[1rem] py-2 px-4'>Vintage</button>
-            </div>
-            <div>
-              <button onClick={(e)=>handleClick(e)} className='bg-[#252525] opacity-75 rounded-[1rem] py-2 px-4  mx-2 md:mx-2 lg:mx-5'>Niche</button>
-            </div>
-            <div>
-              <button onClick={(e)=>handleClick(e)} className='bg-[#252525] opacity-75 rounded-[1rem] py-2 px-4 mr-2 md:mr-2 lg:mr-5'>Occasions</button>
-            </div>
-            </Flickity>
-            </div>
+            <div className='mt-5 w-full font-light md:pb-10 md:pt-5 md:ml-[15%] md:w-screen lg:inline-block lg:text-2xl lg:pb-10 lg:w-screen'>
+              <div className="flex flex-wrap justify-center gap-3 pb-5 md:pb-0 md:-ml-[20%] lg:pb-0 lg:gap-0 lg:-ml-[20%]">
+              <button
+                onClick={(e)=>handleClick(e)}  
+                className="bg-[#252525] opacity-75 rounded-[1rem] py-2 px-4"
+              >
+                Thematic
+              </button>
+                <button 
+                onClick={(e)=>handleClick(e)} 
+                className='bg-[#252525] opacity-75 rounded-[1rem] py-2 px-4 mx-2 md:mx-2 lg:mx-5'
+                >
+                  Exclusive
+                </button>
+                <button 
+                onClick={(e)=>handleClick(e)} 
+                className='bg-[#252525] opacity-75 rounded-[1rem] py-2 px-4'
+                >
+                  Vintage
+                </button>
+                <button 
+                onClick={(e)=>handleClick(e)} 
+                className='bg-[#252525] opacity-75 rounded-[1rem] py-2 px-4  mx-2 md:mx-2 lg:mx-5'
+                >
+                  Niche
+                </button>
+                <button 
+                onClick={(e)=>handleClick(e)} 
+                className='bg-[#252525] opacity-75 rounded-[1rem] py-2 px-4 mr-2 md:mr-2 lg:mr-5'
+                >
+                  Occasions
+                </button>
+              </div>
           </div>
           <div className='mb-10'>
             <div className='flex md:mb-10 lg:mb-24'>
@@ -119,14 +124,15 @@ const HomePage = ({ Images, searchValue, setSearchValue }) => {
               <h1 className='text-2xl font-bold lg:text-4xl lg:mb-[10%]'>Trendy</h1>
               <a onClick={()=>navigate("/products")} className='cursor-pointer text-lg ml-auto pr-4 mt-1 opacity-50 lg:text-3xl z-50'>See all</a>
             </div>
-            <div className='-mt-10 lg:-mt-[15%] -ml-16 mb-10 lg:h-screen'>
+            <div className='-mt-10 lg:-mt-[15%] w-full md:ml-0 mb-10 lg:h-screen'>
             <Flickity
             className={"carousel"}
             elementType={"div"}
             options={flickityOptions} 
             disableImagesLoaded={false}
           >
-            <div className="mr-5 ml-10 h-[50vh] md:h-[70vh] lg:h-screen lg:mb-10">
+
+            <div className="mr-5 h-[50vh] md:h-[70vh] lg:h-screen lg:mb-10">
              <TrendyProducts title="Vintage" name="Haunted House" src={Images.Perfume3}/>
             </div>
             <div className="mr-5 ml-10">
@@ -139,6 +145,7 @@ const HomePage = ({ Images, searchValue, setSearchValue }) => {
             </div>
           </div>
         </div>
+      </div>
     </div>
   )
 }

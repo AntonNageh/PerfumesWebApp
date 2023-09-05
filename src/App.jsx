@@ -11,7 +11,7 @@ function App() {
   
   const [searchValue, setSearchValue] = useState('');
   useEffect(()=>{
-    console.log(searchValue, "test")
+    console.log(searchValue)
   },[searchValue])
 
 
@@ -24,7 +24,8 @@ function App() {
     Perfume5:"/Images/Perfume5.svg",
     Perfume6:"/Images/Perfume6.svg",
     Perfume7:"/Images/Perfume7.svg",
-    Perfume8:"/Images/Perfume8.svg"
+    Perfume8:"/Images/Perfume8.svg",
+    Perfume9:"/Images/Perfume9.svg"
   }
   return (
     <>
