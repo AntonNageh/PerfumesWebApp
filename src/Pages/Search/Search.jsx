@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router";
 import levenshtein from 'fast-levenshtein';
+import TrendyProducts from "../../MainComponents/Trendy/TrendyProducts";
 const Search = (props) => {
   const navigate = new useNavigate();
   
@@ -22,9 +23,36 @@ const bestMatch = options.reduce((best, option) => {
   }
   return best;
 }, { distance: threshold + 1, label: '' });
-
-const result = bestMatch.distance <= threshold ? (
-  <h1>{bestMatch.label}</h1>
+console.log(props)
+const result = bestMatch.distance <= threshold ? 
+(
+      (() => {
+  switch (bestMatch.label.toLowerCase()) {
+    case "thematic":
+      return <div className="flex justify-around">
+              <TrendyProducts title="Thematic" name="Vampire Blood" src={props.Images.Perfume10}/> 
+             </div>
+    case "exclusive": 
+      return <div className="flex justify-around">
+              <TrendyProducts title="Exclusive" name="Midnight Spectre" src={props.Images.Perfume4}/>
+             </div>
+    case "vintage":
+      return <div className="flex justify-around">
+              <TrendyProducts title="Vintage" name="Ghost Keep" src={props.Images.Perfume11}/>
+             </div>
+    case "niche":
+      return  <div className="flex justify-around">
+                <TrendyProducts title="Niche" name="Vampire Keep" src={props.Images.Perfume12}/>
+              </div>
+    case "occasions":
+        return <div className="flex justify-around">
+                <TrendyProducts title="Occasions" name="Vampire Teeth" src={props.Images.Perfume3}/> 
+               </div> 
+    default:
+      return <h1 className="mt-52 ml-10">"{props.searchValue}" was not found,<br/> Please go back to 
+          <span onClick={()=>navigate("/home")} className="text-blue-600"> Homepage.</span> </h1>
+  }
+})()
 ) : (
   <h1 className="mt-52 ml-10">"{props.searchValue}" was not found,<br/> Please go back to 
       <span onClick={()=>navigate("/home")} className="text-blue-600"> Homepage.</span>
@@ -34,38 +62,16 @@ const result = bestMatch.distance <= threshold ? (
 
 
   return (
-    <div className="text-6xl text-white">
-        <h1>Blabla</h1>
-        {/* {
-        props.searchValue ? (
-          <div>
-            {(() => {
-              switch (props.searchValue.toLowerCase()) {
-                case "thematic":
-                  return <h1>Thematic</h1>;
-                case "exclusive": 
-                  return <h1>Exclusive</h1>;
-                case "vintage":
-                  return <h1>Vintage</h1>;
-                case "niche":
-                  return <h1>Niche</h1>;
-                case "occasions":
-                  return <h1>Occasions</h1>;
-                default:
-                  return <h1 className="mt-52 ml-10">"{props.searchValue}" was not found,<br/> Please go back to 
-                      <span onClick={()=>navigate("/home")} className="text-blue-600"> Homepage.</span>
-                  </h1>;
-              }
-            })()}
+    <div className="text-6xl text-white h-screen w-screen">
+              <div className="flex flex-row justify-center md:gap-x-5 mt-10 -ml-[30%] pl-10 lg:mt-[5%] ">
+                <button onClick={()=>navigate("/home")} className=" lg:w-[4vw] w-[3rem] lg:mt-1 z-10 ">
+                <img src={props.Images.back} alt="SearchIcon" className="md:scale-150  bg-[#252525] rounded-full md:mt-3 p-2"></img>
+                </button>
+                <h1 className="lg:text-6xl text-3xl md:text-6xl ml-5 mt-2 text-white lg:ml-10 ">{props.searchValue} </h1>
+              </div>
+         {result}
           </div>
-        ) : <div className="flex mt-[15vh] justify-around text-3xl w-screen">
-          <h1 className="w-10/12"> An error occured while loading your desired item, please go back to 
-          <span onClick={()=>navigate("/home")} className="text-blue-600"> Homepage</span> again.</h1>
-          </div>          
-        } */}
-          {result}
-          </div>
-  )
+  ) 
 }
 
 export default Search

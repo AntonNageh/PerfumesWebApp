@@ -98,7 +98,7 @@ const HomePage = ({ Images, searchValue, setSearchValue }) => {
           </div>
           <div className='mb-10'>
             <div className='flex md:mb-10 lg:mb-24 lg:scale-90'>
-              <h1 className='text-2xl md:text-3xl lg:text-4xl font-bold'>Popular Perfumes</h1>
+              <h1 className='text-2xl md:text-3xl lg:text-4xl md:mb-10 font-bold'>Popular Perfumes</h1>
               <a 
               onClick={
                ()=>navigate("/products")
@@ -126,9 +126,9 @@ const HomePage = ({ Images, searchValue, setSearchValue }) => {
           <div>
             <div className='flex -mt-16 md:mt-10 lg:mt-16 lg:scale-90'>
               <h1 className='text-2xl font-bold lg:text-4xl lg:mb-[10%]'>Trendy</h1>
-              <a onClick={()=>navigate("/products")} className='cursor-pointer text-lg ml-auto pr-4 mt-1 opacity-50 lg:text-3xl z-50'>See all</a>
-            </div>
-            <div className='-mt-10 lg:scale-90 lg:-mt-[15%] w-full md:ml-0 mb-10 lg:h-screen'>
+              <a onClick={()=>navigate("/products")} className='cursor-pointer text-lg ml-auto pr-4 mt-1 opacity-50 lg:text-3xl'>See all</a>
+            </div>  
+            <div className='lg:scale-90 lg:-mt-[10%] w-full md:ml-0 mb-10 lg:h-screen z-0'>
             <Flickity
             className={"carousel"}
             elementType={"div"}
@@ -136,16 +136,16 @@ const HomePage = ({ Images, searchValue, setSearchValue }) => {
             disableImagesLoaded={false}
           >
 
-            <div className="mr-0 h-[50vh] md:h-[70vh] lg:h-screen lg:mb-10">
+            <div className="mr-0 h-[50vh] md:h-[70vh] lg:h-screen lg:mb-10 lg:-mt-20">
              <TrendyProducts title="Vintage" name="Haunted House" src={Images.Perfume3}/>
             </div>
-            <div className="ml-10">
+            <div className="ml-10 lg:-mt-20">
             <TrendyProducts title="Thematic" name="Vampire Blood" src={Images.Perfume10}/>
             </div>
-            <div className="mr-5 ml-10">
+            <div className="mr-5 ml-10 lg:-mt-20">
             <TrendyProducts title="Exclusive" name="Midnight Spectre" src={Images.Perfume4}/>
             </div>
-            <div className="ml-10 mr-5">
+            <div className="ml-10 mr-5 lg:-mt-20">
             <TrendyProducts title="Niche" name="Vampire Keep" src={Images.Perfume11}/>
             </div>
             </Flickity>

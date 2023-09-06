@@ -40,7 +40,7 @@ function App() {
       <Route element={<HomePage Images={Images} searchValue={searchValue} setSearchValue={setSearchValue}/>} path='/home'></Route>
       <Route element={<Product/>} path='/product/:id'></Route>
       <Route element={<AllProducts Images={Images}/>} path='/products'></Route>
-      <Route element={<Search searchValue={searchValue}/>} path='/search'></Route>
+      <Route element={<Search searchValue={searchValue} Images={Images}/>} path='/search'></Route>
     </Routes>
     </BrowserRouter>
     </>
