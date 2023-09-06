@@ -1,9 +1,9 @@
 
 const TrendyProducts = ({title,name,src}) => {
   return (
-    <div className="relative text-white h-[45vh] md:h-[75vw] lg:w-[30vw] lg:h-[40vw] mt-[30%] w-[60vw] flex flex-col rounded-[1rem] bg-[#252525]">
+    <div className="relative lg:scale-90 text-white h-[45vh] md:h-[75vw] lg:w-[30vw] lg:h-[40vw] mt-[30%] w-[60vw] flex flex-col rounded-[1rem] bg-[#252525]">
         <div>
-            <img src={src} className="object-contain w-full lg:w-[30vw]"></img>
+            <img src={src} className="rounded-[1rem] object-contain w-full lg:w-[30vw]"></img>
         </div>
     <div className='flex mt-2 md:mt-3 lg:mt-3'>
       <div>

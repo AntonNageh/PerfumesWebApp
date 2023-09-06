@@ -1,6 +1,5 @@
 import Flickity from "react-flickity-component";
 import Products from '../../MainComponents/Products/Products'
-import search from '/Images/Search.svg'
 
 import './HomePage.css'
 import TrendyProducts from "../../MainComponents/Trendy/TrendyProducts";
@@ -46,20 +45,25 @@ const HomePage = ({ Images, searchValue, setSearchValue }) => {
   const flickityOptions = {
     initialIndex: 1,
     contain: true,
-   
+    wrapAround: true,
   };
 
+  const flickityOptions2 = {
+    initialIndex: 1,
+    contain: true,
+    wrapAround: true,
+  };
   
   return (
     <div className="h-screen w-screen flex flex-col justify-items-center overflow-x-hidden text-white ">
         <div className='w-11/12 self-center'>
           <div className='mb-10'>
             <div className="bg-[#252525] h-[55px] flex mt-5 rounded-[1rem] lg:mb-5">
-              <img src={search} alt="SearchIcon" className='ml-5' width="25px" height="25px"></img>
+              <img src={Images.search} alt="SearchIcon" className='ml-5' width="25px" height="25px"></img>
               <input ref={inputRef} value={searchValue} onChange={handleChange} className='bg-transparent ml-5 outline-none w-10/12 Search' placeholder="Search perfumes"></input>
             </div>
-            <div className='mt-5 w-full font-light md:pb-10 md:pt-5 md:ml-[15%] md:w-screen lg:inline-block lg:text-2xl lg:pb-10 lg:w-screen'>
-              <div className="flex flex-wrap justify-center gap-3 pb-5 md:pb-0 md:-ml-[20%] lg:pb-0 lg:gap-0 lg:-ml-[20%]">
+            <div className='mt-5 w-full font-light md:pb-10 md:pt-5 md:ml-[15%] md:w-screen lg:inline-block lg:pt-0 lg:text-2xl lg:pb-10 lg:w-screen'>
+              <div className="flex flex-wrap justify-center gap-3 pb-5 md:pb-0 md:-ml-[20%] lg:pb-0 lg:gap-0 lg:-ml-[30%] lg:scale-75">
               <button
                 onClick={(e)=>handleClick(e)}  
                 className="bg-[#252525] opacity-75 rounded-[1rem] py-2 px-4"
@@ -93,21 +97,21 @@ const HomePage = ({ Images, searchValue, setSearchValue }) => {
               </div>
           </div>
           <div className='mb-10'>
-            <div className='flex md:mb-10 lg:mb-24'>
+            <div className='flex md:mb-10 lg:mb-24 lg:scale-90'>
               <h1 className='text-2xl md:text-3xl lg:text-4xl font-bold'>Popular Perfumes</h1>
               <a 
               onClick={
                ()=>navigate("/products")
                 } 
-              className='cursor-pointer text-lg md:text-2xl lg:text-3xl ml-auto pr-4 mt-1 opacity-50'>
+              className='cursor-pointer text-lg md:text-2xl z-10 lg:text-3xl ml-auto pr-4 mt-1 opacity-50'>
                 See all
                 </a>
             </div>
-            <div className='-mt-10 ml-2'>
+            <div className='-mt-10 ml-2 lg:ml-0 lg:scale-90'>
             <Flickity
             className={"carousel"}
             elementType={"div"}
-            options={flickityOptions} // takes flickity options {}
+            options={flickityOptions2} // takes flickity options {}
             disableImagesLoaded={false}
           >
             <div className="mr-5 ml-5">
@@ -120,11 +124,11 @@ const HomePage = ({ Images, searchValue, setSearchValue }) => {
             </div>
           </div>
           <div>
-            <div className='flex -mt-16 md:mt-10 lg:mt-16'>
+            <div className='flex -mt-16 md:mt-10 lg:mt-16 lg:scale-90'>
               <h1 className='text-2xl font-bold lg:text-4xl lg:mb-[10%]'>Trendy</h1>
               <a onClick={()=>navigate("/products")} className='cursor-pointer text-lg ml-auto pr-4 mt-1 opacity-50 lg:text-3xl z-50'>See all</a>
             </div>
-            <div className='-mt-10 lg:-mt-[15%] w-full md:ml-0 mb-10 lg:h-screen'>
+            <div className='-mt-10 lg:scale-90 lg:-mt-[15%] w-full md:ml-0 mb-10 lg:h-screen'>
             <Flickity
             className={"carousel"}
             elementType={"div"}
@@ -132,14 +136,17 @@ const HomePage = ({ Images, searchValue, setSearchValue }) => {
             disableImagesLoaded={false}
           >
 
-            <div className="mr-5 h-[50vh] md:h-[70vh] lg:h-screen lg:mb-10">
+            <div className="mr-0 h-[50vh] md:h-[70vh] lg:h-screen lg:mb-10">
              <TrendyProducts title="Vintage" name="Haunted House" src={Images.Perfume3}/>
             </div>
-            <div className="mr-5 ml-10">
-            <TrendyProducts title="Thematic" name="Vampire Blood" src={Images.Perfume4}/>
-            </div>
             <div className="ml-10">
-            <TrendyProducts title="Thematic" name="Vampire Blood" src={Images.Perfume5}/>
+            <TrendyProducts title="Thematic" name="Vampire Blood" src={Images.Perfume10}/>
+            </div>
+            <div className="mr-5 ml-10">
+            <TrendyProducts title="Exclusive" name="Midnight Spectre" src={Images.Perfume4}/>
+            </div>
+            <div className="ml-10 mr-5">
+            <TrendyProducts title="Niche" name="Vampire Keep" src={Images.Perfume11}/>
             </div>
             </Flickity>
             </div>

@@ -25,7 +25,12 @@ function App() {
     Perfume6:"/Images/Perfume6.svg",
     Perfume7:"/Images/Perfume7.svg",
     Perfume8:"/Images/Perfume8.svg",
-    Perfume9:"/Images/Perfume9.svg"
+    Perfume9:"/Images/Perfume9.svg",
+    Perfume10:"/Images/Perfume10.jpg",
+    Perfume11:"/Images/Perfume11.jpg",
+    Perfume12:"/Images/Perfume12.jpg",
+    search:"/Images/Search.svg",
+    back:"/Images/back.png",
   }
   return (
     <>
