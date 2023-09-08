@@ -7,7 +7,7 @@ import TrendyProducts from "../../MainComponents/Trendy/TrendyProducts";
 import { useEffect, useRef } from "react";
 import { useNavigate } from "react-router";
 
-const HomePage = ({ Images, searchValue, setSearchValue }) => {
+const HomePage = ({ Images, searchValue, setSearchValue, prices }) => {
   const navigate = useNavigate();
   const inputRef = useRef(null);
 
@@ -115,10 +115,10 @@ const HomePage = ({ Images, searchValue, setSearchValue }) => {
             disableImagesLoaded={false}
           >
             <div className="mr-5 ml-5">
-              <Products name="The Dancing Death" src={Images.Perfume1} price="450,00"/>
+              <Products name="The Dancing Death" src={Images.Perfume1} price={prices.price1}/>
             </div>
             <div>
-              <Products name="Vampire blood" src={Images.Perfume2} price="85$"/>
+              <Products name="Vampire blood" src={Images.Perfume2} price={prices.price2}/>
             </div>
             </Flickity>
             </div>
