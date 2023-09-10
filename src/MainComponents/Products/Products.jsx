@@ -8,8 +8,8 @@ const Products = ({name,price,src}) => {
   return (
     <div className="relative text-white h-[50vh] w-[80vw] flex flex-col rounded-[1rem]" id={uniqueId}>
       <button onClick={()=>navigate(`/product/${uniqueId}`)}>
-        <img src={src} className="absolute object-contain w-full h-full -z-10"></img>
-        <div className='mt-[55vw] md:mt-[60%] lg:mt-[17vw] xl:mt-[20vw] flex'>
+        <img src={src} className="absolute object-contain  w-full h-full -z-10"></img>
+        <div className='mt-[55vw] md:mt-[60%] lg:mt-[17vw] xl:mt-[20vw] flex text-left'>
           <div className="lg:ml-[25%] lg:mt-[3vw]">
             <h1 className='ml-5 opacity-60'>Perfume</h1>
             <h1 className='text-[4.5vw]  lg:text-[4vh]  mt-1 font-bold ml-5'>{name}</h1>

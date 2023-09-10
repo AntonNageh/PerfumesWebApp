@@ -11,7 +11,7 @@ const TrendyProducts = ({title,name,src}) => {
           <div>
               <img src={src} className="rounded-[1rem] object-contain w-full lg:w-[30vw]"></img>
           </div>
-      <div className='flex mt-2 md:mt-3 lg:mt-3'>
+      <div className='flex mt-2 md:mt-3 lg:mt-3 text-left'>
         <div>
           <h1 className='ml-5 opacity-60 text-lg md:text-6xl lg:text-6xl'>{title}</h1>
           <h1 className='text-[1.2rem] mt-1 font-bold ml-5 md:text-2xl'>{name}</h1>
