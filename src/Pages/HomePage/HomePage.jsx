@@ -55,7 +55,7 @@ const HomePage = ({ Images, searchValue, setSearchValue, prices }) => {
   };
   
   return (
-    <div className="h-screen w-screen flex flex-col justify-items-center overflow-x-hidden text-white ">
+    <div className="h-screen w-screen flex flex-col justify-items-center text-white ">
         <div className='w-11/12 self-center'>
           <div className='mb-10'>
             <div className="bg-[#252525] h-[55px] flex mt-5 rounded-[1rem] lg:mb-5">

@@ -44,7 +44,7 @@ function App() {
     Arrowleft:"/Images/Arrow-left.png",
   }
   return (
-    <>
+    <div className='overflow-x-clip'>
     <BrowserRouter>
     <Routes> 
       <Route element={<LandingPage/>} path='/'></Route>
@@ -54,7 +54,7 @@ function App() {
       <Route element={<Search searchValue={searchValue} Images={Images}/>} path='/search'></Route>
     </Routes>
     </BrowserRouter>
-    </>
+    </div>
   )
 }
 

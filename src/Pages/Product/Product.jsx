@@ -23,7 +23,7 @@ const Product = (props) => {
   const RandomOutput = RandomNames[randomIndex];
   const navigate = useNavigate();
   return (
-    <div className="flex flex-col mx-auto justify-center -z-10 overflow-x-hidden lg:scale-90 ">
+    <div className="flex flex-col mx-auto justify-center -z-10 lg:ml-5 lg:scale-90 ">
       <div className="h-[45vh] w-screen lg:h-screen z-1 flex justify-center">
         <div className="flex justify-between w-full relative h-10 z-50 mt-5">
           <button onClick={()=>navigate("/home")} className="ml-5 h-[2.5rem]">
