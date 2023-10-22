@@ -45,15 +45,15 @@ function App() {
   }
   return (
     <div className='overflow-x-clip'>
-    <BrowserRouter>
-    <Routes> 
-      <Route element={<LandingPage/>} path='/'></Route>
-      <Route element={<HomePage prices={prices} Images={Images} searchValue={searchValue} setSearchValue={setSearchValue}/>} path='/home'></Route>
-      <Route element={<Product  prices={prices} Images={Images}/>} path='/product/:id'></Route>
-      <Route element={<AllProducts Images={Images}/>} path='/products'></Route>
-      <Route element={<Search searchValue={searchValue} Images={Images}/>} path='/search'></Route>
-    </Routes>
-    </BrowserRouter>
+      <BrowserRouter>
+        <Routes> 
+          <Route element={<LandingPage/>} path='/'></Route>
+          <Route element={<HomePage prices={prices} Images={Images} searchValue={searchValue} setSearchValue={setSearchValue}/>} path='/home'></Route>
+          <Route element={<Product  prices={prices} Images={Images}/>} path='/product/:id'></Route>
+          <Route element={<AllProducts Images={Images}/>} path='/products'></Route>
+          <Route element={<Search searchValue={searchValue} Images={Images}/>} path='/search'></Route>
+        </Routes>
+      </BrowserRouter>
     </div>
   )
 }

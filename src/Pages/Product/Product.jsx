@@ -36,7 +36,7 @@ const Product = (props) => {
         <img src={props.Images[randomImageKey]} alt="ProductImg" className="absolute h-full -translate-y-[30%]  w-full"></img>
       </div>
       <div className="bg-black rounded-[1.7rem] -mt-[20%] z-10 text-white flex flex-col justify-center">
-        <div className="ml-5 mt-10 lg:flex lg:flex-col lg:justify-center">
+        <div className="ml-5 mt-10 md:ml-10 lg:flex lg:flex-col lg:justify-center">
           <div className="h-[15vh] w-screen flex ">
             <img src={props.Images.Perfume8} className="w-[80px] h-[80px] rounded-[1rem]"></img>
             <div className="ml-5 -mt-1">
