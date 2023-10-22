@@ -29,23 +29,23 @@ const result = bestMatch.distance <= threshold ?
       (() => {
   switch (bestMatch.label.toLowerCase()) {
     case "thematic":
-      return <div className="flex justify-around">
+      return <div className="flex justify-around lg:-mt-[5em]">
               <TrendyProducts title="Thematic" name="Vampire Blood" src={props.Images.Perfume10}/> 
              </div>
     case "exclusive": 
-      return <div className="flex justify-around">
+      return <div className="flex justify-around lg:-mt-[5em]">
               <TrendyProducts title="Exclusive" name="Midnight Spectre" src={props.Images.Perfume4}/>
              </div>
     case "vintage":
-      return <div className="flex justify-around">
+      return <div className="flex justify-around lg:-mt-[5em]">
               <TrendyProducts title="Vintage" name="Ghost Keep" src={props.Images.Perfume11}/>
              </div>
     case "niche":
-      return  <div className="flex justify-around">
+      return  <div className="flex justify-around lg:-mt-[5em]">
                 <TrendyProducts title="Niche" name="Vampire Keep" src={props.Images.Perfume12}/>
               </div>
     case "occasions":
-        return <div className="flex justify-around">
+        return <div className="flex justify-around lg:-mt-[5em]">
                 <TrendyProducts title="Occasions" name="Vampire Teeth" src={props.Images.Perfume3}/> 
                </div> 
     default:
